@@ -1,0 +1,67 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="front-encabezado">
+    <template>
+    <style>
+      :host {
+        display: block;
+      }
+      .center {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+    /**********HEADER*************/
+    #header-img img {
+        width: 5.5rem;
+    }
+
+    #header-img,
+    #header-text {
+        min-height: 7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #header-text {
+        min-height: 0rem;
+    }
+
+    #header-text h1 {
+        font-size: 20px;
+    }
+    </style>
+    <div id="header-img">
+      <img src="img/ico-logo.png" class="center">
+    </div>
+    <div id="header-text">
+      <h2>[[prop1]]</h2>
+    </div>
+  </template>
+
+    <script>
+        /**
+         * `front-encabezado`
+         * encabezado de challenge #2
+         *
+         * @customElement
+         * @polymer
+         * @demo demo/index.html
+         */
+        class FrontEncabezado extends Polymer.Element {
+            static get is() {
+                return 'front-encabezado';
+            }
+            static get properties() {
+                return {
+                    prop1: {
+                        type: String,
+                        value: 'Front End Test'
+                    }
+                };
+            }
+        }
+
+        window.customElements.define(FrontEncabezado.is, FrontEncabezado);
+    </script>
+</dom-module>
